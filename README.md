@@ -28,9 +28,7 @@ Create a Kaggle API token and set the KAGGLE_USERNAME and KAGGLE_KEY environment
 Clone or download this repository.
 Open the project directory in your VS Code or preferred IDE.
 Replace the placeholder dataset name ('your_dataset_name'') in the script.py file with the actual Kaggle dataset you want to use.
-Run the script:
-
-python script.py
+Run the script: " python script.py "
 
 **Expected Output:**
 
