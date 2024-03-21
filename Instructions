@@ -1,0 +1,24 @@
+1. Create a virtual environment for Python:
+   python -m venv myenv
+
+2. Activate the virtual environment:
+   source myenv/bin/activate  (Linux/macOS)
+   .\myenv\Scripts\activate    (Windows)
+
+3. Install requirements from requirements.txt:
+   pip install -r requirements.txt
+
+4. Download the dataset from Kaggle:
+   Go to https://www.kaggle.com/datasets/kelvinkelue/credit-card-fraud-prediction?resource=download
+   Download the dataset file.
+5. Make sure to replace file path in script.py withyour download file location
+6. Run script.py:
+   python script.py
+
+
+Troubleshooting Tips:
+
+If the virtual environment activation fails, try recreating the environment or check for any system environment variable conflicts.
+If downloading the Kaggle dataset manually, confirm that you have the correct file format and place it in the correct directory.
+When running the script, look for error messages indicating missing dependencies or incorrect file paths, and address them accordingly.
+Keep your virtual environment clean by deactivating it (deactivate command) after completing your task.
