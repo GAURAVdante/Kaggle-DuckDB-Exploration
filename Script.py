@@ -100,11 +100,6 @@ plt.title('Top 5 Cities by Total Transaction Amount')
 plt.xticks(rotation=45)
 plt.show()
 
-# Plotting can also be done using the fetched data for potential fraudulent transactions
-# Adjust the plotting code based on the structure of the fetched data
-# For example, if result13 is a list of tuples, you can convert it to a DataFrame and plot accordingly
-# df_result13 = pd.DataFrame(result13, columns=['column1', 'column2', ...])
-# plt.bar(...)
 
 # Print or use the results as needed
 print("Total Transactions:", total_transactions)
