@@ -1,3 +1,6 @@
 pandas
 duckdb
 matplotlib
+isort
+pdoc
+flake8
