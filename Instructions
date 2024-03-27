@@ -1,24 +1,98 @@
-1. Create a virtual environment for Python:
-   python -m venv myenv
+Running Python Programs with SQL Queries Using DuckDB
+In this guide, we will walk through the process of setting up and running Python programs that involve executing SQL queries using DuckDB. 
+The code examples provided in this guide have been improved by using tools like isort and Flake8 for code formatting and linting.
 
-2. Activate the virtual environment:
-   source myenv/bin/activate  (Linux/macOS)
-   .\myenv\Scripts\activate    (Windows)
+Prerequisites
+Before we begin, make sure you have the following installed on your system:
 
-3. Install requirements from requirements.txt:
-   pip install -r requirements.txt
+Python: You can download and install Python from the official website python.org.
+Visual Studio Code (VSCode) or any other code editor of your choice.
+DuckDB: You can install DuckDB using pip:
 
-4. Download the dataset from Kaggle:
-   Go to https://www.kaggle.com/datasets/kelvinkelue/credit-card-fraud-prediction?resource=download
-   Download the dataset file.
-5. Make sure to replace file path in script.py withyour download file location
-6. Run script.py:
-   python script.py
+pip install duckdb
+Poetry (optional): If you prefer using Poetry for dependency management and virtual environments, you can install it using:
+
+curl -sSL https://install.python-poetry.org | python -
+OR
+
+pip install poetry
+
+Setting Up the Project
+Create a new directory for your project and navigate to it:
 
 
-Troubleshooting Tips:
+mkdir duckdb_project
+cd duckdb_project
+Initialize a new Poetry project (if using Poetry):
 
-If the virtual environment activation fails, try recreating the environment or check for any system environment variable conflicts.
-If downloading the Kaggle dataset manually, confirm that you have the correct file format and place it in the correct directory.
-When running the script, look for error messages indicating missing dependencies or incorrect file paths, and address them accordingly.
-Keep your virtual environment clean by deactivating it (deactivate command) after completing your task.
+poetry init
+Follow the prompts to fill in project information.
+
+Add dependencies to your Poetry project (if using Poetry):
+
+poetry add pandas matplotlib pydantic duckdb
+Create the following files in your project directory:
+
+main.py: Contains the main code to run SQL queries and process data.
+query_functions.py: Contains functions to execute SQL queries using DuckDB.
+plotting_functions.py: Contains functions to plot data using matplotlib.
+database.py: Contains functions to connect to DuckDB and create tables.
+Copy the code from the respective sections below into their corresponding files.
+
+Code Improvements
+isort and Flake8
+We have improved our code by using isort for import sorting and Flake8 for code linting. 
+Ensure you have these tools installed (pip install isort flake8) and configured in your VSCode settings for seamless code formatting and linting.
+
+Running the Program
+Open your code editor and navigate to your project directory.
+
+Activate your virtual environment if you created one (if using Poetry):
+
+
+poetry shell
+Run the main Python script:
+
+
+python main.py
+Adding a New SQL Query
+To add a new SQL query, follow these steps:
+
+Open query_functions.py in your code editor.
+
+Create a new function to execute your SQL query. Ensure you pass the DuckDB connection (con) as an argument to the function.
+
+Update the main.py file to call your new function and handle the results accordingly.
+
+Example Code
+main.py
+
+
+# Your code from main.py goes here
+# Make sure to import and call necessary functions from other modules
+query_functions.py
+
+
+# Your code from query_functions.py goes here
+# Define functions to execute SQL queries using DuckDB
+plotting_functions.py
+
+# Your code from plotting_functions.py goes here
+# Define functions to plot data using matplotlib
+database.py
+
+# Your code from database.py goes here
+# Define functions to connect to DuckDB and create tables
+
+
+pdoc Documentation
+We have also generated documentation for our code using pdoc. After installing pdoc (pip install pdoc3), you can generate documentation for your code using the command:
+
+pdoc module.py
+Replace module.py with the path to your Python module.
+
+To view the generated documentation, open the generated HTML files in a web browser.
+
+Conclusion
+By following this guide, you should now have a better understanding of how to set up and run Python programs with SQL queries using DuckDB.
+Additionally, you have learned about tools like isort and Flake8 for improving code formatting and linting, which are essential for maintaining clean and organized codebases.
