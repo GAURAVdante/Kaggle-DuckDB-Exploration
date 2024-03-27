@@ -7,9 +7,10 @@ Before we begin, make sure you have the following installed on your system:
 
 Python: You can download and install Python from the official website python.org.
 Visual Studio Code (VSCode) or any other code editor of your choice.
-DuckDB: You can install DuckDB using pip:
+Install the Packages using :
 
-pip install duckdb
+pip install -r requirements.txt
+
 Poetry (optional): If you prefer using Poetry for dependency management and virtual environments, you can install it using:
 
 curl -sSL https://install.python-poetry.org | python -
