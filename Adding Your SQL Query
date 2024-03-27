@@ -1,0 +1,52 @@
+Add the SQL Query:
+
+Open query_functions.py in your code editor.
+Create a new function to execute your SQL query. Ensure you pass the DuckDB connection (con) as an argument to the function.
+Here's an example query to get the total transaction amount by category:
+
+def total_transaction_amount_by_category(con):
+    query = "SELECT category, SUM(amt) AS total_amount FROM data GROUP BY category"
+    result = con.execute(query).fetchall()
+    return result
+Update main.py:
+
+Import the new function from query_functions.py:
+
+from query_functions import total_transaction_amount_by_category
+Call the new function with the DuckDB connection (con) and handle the results:
+
+# Assuming you already have con defined and connected to DuckDB
+total_transaction_amount = total_transaction_amount_by_category(con)
+Plotting the Results:
+
+Open plotting_functions.py in your code editor.
+Create a new function to plot the results using matplotlib. You can customize the plot as needed.
+Here's an example function to plot total transaction amount by category:
+
+import matplotlib.pyplot as plt
+
+def plot_total_transaction_amount_by_category(data):
+    categories = [row[0] for row in data]
+    amounts = [row[1] for row in data]
+
+    plt.figure(figsize=(10, 6))
+    plt.bar(categories, amounts, color='lightcoral')
+    plt.xlabel('Category')
+    plt.ylabel('Total Amount')
+    plt.title('Total Transaction Amount by Category')
+    plt.xticks(rotation=45)
+    plt.show()
+Update main.py to Plot:
+
+Import the new plotting function from plotting_functions.py:
+
+from plotting_functions import plot_total_transaction_amount_by_category
+Call the plotting function with the data retrieved from the SQL query:
+
+plot_total_transaction_amount_by_category(total_transaction_amount)
+Execute main.py:
+
+Ensure you have a valid connection to DuckDB in database.py and that you've executed the necessary setup queries.
+Run python main.py in your terminal or command prompt to execute the program.
+This guide assumes you have the necessary Python packages installed (duckdb, matplotlib, etc.) and that you've set up your project structure as mentioned earlier in the guide. 
+Adjust the code snippets according to your specific SQL query and plotting requirements.
