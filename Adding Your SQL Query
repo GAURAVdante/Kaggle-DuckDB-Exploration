@@ -1,52 +1,66 @@
-Add the SQL Query:
+# Adding Your Own SQL Query
 
-Open query_functions.py in your code editor.
-Create a new function to execute your SQL query. Ensure you pass the DuckDB connection (con) as an argument to the function.
-Here's an example query to get the total transaction amount by category:
+Follow these steps to add your own SQL query and plot the results in your Python program using DuckDB and matplotlib:
 
-def total_transaction_amount_by_category(con):
-    query = "SELECT category, SUM(amt) AS total_amount FROM data GROUP BY category"
-    result = con.execute(query).fetchall()
-    return result
-Update main.py:
+## Add the SQL Query
 
-Import the new function from query_functions.py:
+1. Open `query_functions.py` in your code editor.
 
-from query_functions import total_transaction_amount_by_category
-Call the new function with the DuckDB connection (con) and handle the results:
+2. Create a new function to execute your SQL query. Make sure to pass the DuckDB connection (`con`) as an argument to the function.
 
-# Assuming you already have con defined and connected to DuckDB
-total_transaction_amount = total_transaction_amount_by_category(con)
-Plotting the Results:
+Example :
 
-Open plotting_functions.py in your code editor.
-Create a new function to plot the results using matplotlib. You can customize the plot as needed.
-Here's an example function to plot total transaction amount by category:
+   def total_transaction_amount_by_category(con):
+       query = "SELECT category, SUM(amt) AS total_amount FROM data GROUP BY category"
+       result = con.execute(query).fetchall()
+       return result
 
-import matplotlib.pyplot as plt
+## Update `main.py`
 
-def plot_total_transaction_amount_by_category(data):
-    categories = [row[0] for row in data]
-    amounts = [row[1] for row in data]
+1. Import the new function from `query_functions.py`.
 
-    plt.figure(figsize=(10, 6))
-    plt.bar(categories, amounts, color='lightcoral')
-    plt.xlabel('Category')
-    plt.ylabel('Total Amount')
-    plt.title('Total Transaction Amount by Category')
-    plt.xticks(rotation=45)
-    plt.show()
-Update main.py to Plot:
+   from query_functions import total_transaction_amount_by_category
 
-Import the new plotting function from plotting_functions.py:
+2. Call the new function with the DuckDB connection (`con`) and handle the results.
 
-from plotting_functions import plot_total_transaction_amount_by_category
-Call the plotting function with the data retrieved from the SQL query:
+   # Assuming you already have 'con' defined and connected to DuckDB
+   total_transaction_amount = total_transaction_amount_by_category(con)
 
-plot_total_transaction_amount_by_category(total_transaction_amount)
-Execute main.py:
+## Plotting the Results
 
-Ensure you have a valid connection to DuckDB in database.py and that you've executed the necessary setup queries.
-Run python main.py in your terminal or command prompt to execute the program.
-This guide assumes you have the necessary Python packages installed (duckdb, matplotlib, etc.) and that you've set up your project structure as mentioned earlier in the guide. 
-Adjust the code snippets according to your specific SQL query and plotting requirements.
+1. Open `plotting_functions.py` in your code editor.
+
+2. Create a new function to plot the results using matplotlib. Customize the plot as needed.
+
+   import matplotlib.pyplot as plt
+
+   def plot_total_transaction_amount_by_category(data):
+       categories = [row[0] for row in data]
+       amounts = [row[1] for row in data]
+
+       plt.figure(figsize=(10, 6))
+       plt.bar(categories, amounts, color='lightcoral')
+       plt.xlabel('Category')
+       plt.ylabel('Total Amount')
+       plt.title('Total Transaction Amount by Category')
+       plt.xticks(rotation=45)
+       plt.show()
+   
+
+## Update `main.py` to Plot
+
+1. Import the new plotting function from `plotting_functions.py`.
+
+   from plotting_functions import plot_total_transaction_amount_by_category
+
+2. Call the plotting function with the data retrieved from the SQL query.
+
+   plot_total_transaction_amount_by_category(total_transaction_amount)
+
+## Execute the Program
+
+1. Ensure you have a valid connection to DuckDB in `database.py`, and you've executed the necessary setup queries.
+
+2. Run `python main.py` in your terminal or command prompt to execute the program.
+
+This guide assumes you have the necessary Python packages installed (duckdb, matplotlib, etc.) and that you've set up your project structure as mentioned earlier in the guide. Adjust the code snippets according to your specific SQL query and plotting requirements.
