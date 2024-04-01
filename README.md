@@ -1,41 +1,49 @@
-Fraud Detection Analysis using DuckDB, Python, and Kaggle Data
-Description:
-This project showcases how to leverage Python, DuckDB, and a Kaggle dataset for fraud detection analysis. It demonstrates essential steps involved in:
+Fraud Detection Analysis Using DuckDB and Python
 
-Data Acquisition: Downloading a dataset from Kaggle using Python libraries.
-Data Exploration: Using DuckDB's in-memory SQL capabilities to perform data exploration and analysis.
-Fraud Detection: Identifying potential fraudulent transactions based on predefined criteria using SQL queries.
-Output Display: Presenting the results of fraud detection queries within your Python environment, including graphical visualizations for clear insights.
-Prerequisites:
-Python (version 3.x recommended)
-DuckDB
-Kaggle API credentials or a valid Kaggle dataset
-A code editor or IDE (VS Code recommended)
-Installation:
-Install required packages:
+Problem Statement :
+Fraudulent activities pose a significant threat to financial institutions and online platforms. Detecting and preventing fraud is crucial to safeguarding users' assets and maintaining trust in the system. However, manual analysis of transaction data for fraud detection is time-consuming and error-prone. Therefore, there is a need for automated tools and techniques to efficiently identify suspicious activities.
 
-pip install duckdb pandas matplotlib kaggle
-Create a Kaggle API token and set the KAGGLE_USERNAME and KAGGLE_KEY environment variables.
+Solution Overview:
+This project focuses on leveraging DuckDB, an analytical SQL database, and Python to perform fraud detection analysis on transaction data. The solution includes the following components:
 
-Usage:
-Clone or download this repository.
-Open the project directory in your code editor or preferred IDE.
-Replace the placeholder dataset path (csv_file_path) in the main.py file with the actual path of your Kaggle dataset.
-Run the script:
+Data Loading: Connects to DuckDB and loads transaction data from a CSV file.
 
-python main.py
-Expected Output:
-The script will execute various SQL queries on the downloaded dataset to perform fraud detection analysis. It will display the results using matplotlib for graphical visualizations and print potential fraudulent transactions based on predefined criteria.
+SQL Queries: Executes SQL queries to extract insights such as total transactions, average transaction amounts by category, top merchants, gender distribution of customers, and potential fraudulent transactions.
 
-Graphical Visualizations:
-The script will generate graphs for various analysis results, such as:
+Data Visualization: Uses matplotlib to create visualizations such as bar charts, pie charts, and histograms to represent the analysis results.
 
-Bar chart for total transactions count
-Bar chart for average transaction amount by category
-Bar chart for top 5 merchants by total transaction amount
-Pie chart for gender distribution of customers
-Bar chart for average transaction amount by state
-Bar chart for top 5 cities by total transaction amount
-Additional Notes:
-Ensure that your Kaggle dataset contains the necessary columns (cc_num, trans_num, category, merchant, amt, gender, state, city, etc.) for fraud detection analysis.
-Adjust the fraud detection criteria and thresholds in the SQL queries (query13 in query_functions.py) based on your specific fraud detection requirements.
+Automated Analysis: Implements automated analysis techniques to identify potential fraudulent transactions based on predefined thresholds and criteria.
+
+
+Why Choose This Solution?
+Efficiency: DuckDB provides fast and efficient SQL querying capabilities, enabling quick analysis of large datasets.
+
+Flexibility: Python offers a flexible and powerful environment for data manipulation, analysis, and visualization, making it ideal for fraud detection tasks.
+
+Integration: The integration of DuckDB and Python allows seamless execution of SQL queries and data processing tasks within the same environment.
+
+Scalability: The solution is scalable and can handle increasing volumes of transaction data, making it suitable for real-world applications.
+
+Accuracy: Automated fraud detection algorithms and thresholds help improve the accuracy of identifying potential fraudulent activities.
+
+
+How to Run the Code
+Clone the Repository: Clone the project repository to your local machine using the following command:
+
+
+git clone https://github.com/GAURAVdante/Kaggle-DuckDB-Exploration
+
+Navigate to Project Directory: Change to the project directory:
+
+cd fraud-detection-analysis
+Install Dependencies
+
+poetry install
+
+Set Up Environment: Follow the instructions provided in "Instructions.txt" to set up the environment, configure database connections, and prepare the data for analysis.
+
+Run the Code: Execute the main Python script to perform fraud detection analysis:
+
+poetry run python main.py
+
+View Results: After running the code, view the generated visualizations and analysis results to gain insights into potential fraudulent activities.
