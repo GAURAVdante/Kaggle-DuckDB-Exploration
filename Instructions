@@ -89,8 +89,29 @@ Replace module.py with the path to your Python module.
 
 To view the generated documentation, open the generated HTML files in a web browser.
 
+
+Running the Interactive Dashboard
+
+1. Open your terminal or command prompt.
+
+2. Navigate to your project directory where dashboard.py is located.
+3. Activate your virtual environment (if using Poetry) by running:
+
+poetry shell
+
+4. Start the interactive dashboard by executing the following command:
+
+python dashboard.py
+
+Once the dashboard is running, open your web browser and go to http://127.0.0.1:8050/ to access the dashboard interface.
+Use the dropdown menu to select a category and view the total transactions for that category.
+The dashboard provides an interactive way to visualize and analyze data from the DuckDB database.
+It allows you to dynamically select a category and see the corresponding total transactions for that category in real time.
+
+
+
+
 ## Conclusion
 
 By following this guide, you should now have a better understanding of how to set up and run Python programs with SQL queries using DuckDB. Additionally, you have learned about tools like isort and Flake8 for improving code formatting and linting, which are essential for maintaining clean and organized codebases.
 
-For detailed instructions on how to run the code and make modifications, refer to the "Instructions.txt" file included in the project.
