@@ -37,3 +37,29 @@ def gender_distribution(con):
     result = con.execute(query).fetchall()
     gender_dist = [{"gender": row[0], "num_transactions": row[1]} for row in result]
     return gender_dist
+
+
+def top_merchants_by_total_amount_chart_data(con):
+    query = (
+        "SELECT merchant, SUM(amt) AS total_amount FROM data "
+        "GROUP BY merchant ORDER BY total_amount DESC LIMIT 5"
+    )
+    result = con.execute(query).fetchall()
+    return [{"merchant": row[0], "total_amount": row[1]} for row in result]
+
+def top_merchants_data(con):
+    query = (
+        "SELECT merchant, SUM(amt) AS total_amount FROM data "
+        "GROUP BY merchant ORDER BY total_amount DESC LIMIT 5"
+    )
+    result = con.execute(query).fetchall()
+    top_merchants_data = [{"merchant": row[0], "total_amount": row[1]} for row in result]
+    return top_merchants_data
+
+    
+def transaction_amount_distribution(con):
+    query = "SELECT category, SUM(amt) AS total_amount FROM data GROUP BY category"
+    result = con.execute(query).fetchall()
+    amount_distribution = [{"category": row[0], "total_amount": row[1]} for row in result]
+    return amount_distribution
+
