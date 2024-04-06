@@ -37,7 +37,7 @@ pip install poetry
 
 3. Add dependencies to your Poetry project (if using Poetry):
 
-   poetry add pandas matplotlib pydantic duckdb
+   poetry add pandas matplotlib pydantic duckdb dash plotly 
 
 4. Create the following files in your project directory:
 
