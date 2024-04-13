@@ -49,6 +49,8 @@ pip install poetry
 
    - database.py: Contains functions to connect to DuckDB and create tables.
 
+   - dashborad.py : Contains funtions to Create a local HTLML file for displaying data into dashborad style graphs
+
 ## Code Improvements
 
 isort and Flake8
