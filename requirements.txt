@@ -6,4 +6,4 @@ pdoc
 flake8
 dash
 plotly
-
+pydantic
