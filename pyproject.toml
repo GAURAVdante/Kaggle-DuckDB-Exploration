@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "testmyenv"
+version = "0.1.0"
+description = ""
+authors = ["GAURAVdante <gauravguptahappy97@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+dash = "^2.16.1"
+plotly = "^5.20.0"
+matplotlib = "^3.8.4"
+flake8 = "^7.0.0"
+isort = "^5.13.2"
+duckdb = "^0.10.1"
+pydantic = "^2.7.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
